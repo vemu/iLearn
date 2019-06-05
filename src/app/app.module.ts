@@ -4,11 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
+import { ThemeDirective } from './theme.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent
+    SignupComponent,
+    ThemeDirective
   ],
   imports: [
     BrowserModule,

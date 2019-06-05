@@ -1,10 +1,10 @@
-<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signupForm">
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signupForm" >
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>First Name:</label>
       <input type="text" id="firstname" class="form-control" placeholder="Max" formControlName="firstName"
         [ngClass]="{'is-invalid': firstName.invalid && (firstName.dirty || firstName.touched), 'is-valid': firstName.valid}"
-        required />
+        required  />
       <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="invalid-feedback">
         <div *ngIf="firstName.errors.required">
           Your firstname is required.

@@ -16,6 +16,9 @@
       <mark><a href="#" class="text-secondary">Python</a></mark>
       <mark><a href="#" class="text-success">Matlab</a></mark>
       <p>and much more ...</p>
+      <h4>Choose your plan</h4>
+      <button type="button" class="btn btn-primary" [value]="'student'" (click)="toggleTheme('student')" >Student</button>
+      <button type="button" class="btn btn-warning" [value]="'pro'" (click)="toggleTheme('pro')" >Professional</button>
     </div>
     <app-signup></app-signup>
   </div>

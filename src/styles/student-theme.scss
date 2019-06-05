@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+
+
+// Themes source: https://themestr.app
+// Student
+$theme-colors: (
+  "primary": #083358,
+  "secondary": #F67280,
+  "success": #0074E4,
+  "danger": #FF4057,
+  "info": #74DBEF,
+  "warning": #FC3C3C,
+  "light": #F2F2F0,
+  "dark": #072247,
+);
+
+// Your variable overrides
+$body-bg: #F2F2F0;
+$body-color: #072247;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

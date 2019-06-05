@@ -6,7 +6,7 @@ export const PasswordSecurityValidator = function (control: AbstractControl): Va
     let password: string = control.value;
     let upperCaseMatch = /[A-Z]+/g.test(password);
     let lowerCaseMatch = /[a-z]+/g.test(password);
-    let charLengthMatch = /[a-zA-Z]{6,}/.test(password);
+    let charLengthMatch = /[a-zA-Z]{3,}/.test(password);
     let numberMatch = /.*[0-9]+/g.test(password);
 
     let specialCharMatch = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password);
