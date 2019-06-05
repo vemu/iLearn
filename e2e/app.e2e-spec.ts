@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('signup-form App', () => {
+describe('ilearn App', () => {
   let page: AppPage;
 
   beforeEach(() => {

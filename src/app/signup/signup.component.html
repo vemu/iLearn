@@ -1,0 +1,78 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signupForm">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>First Name:</label>
+      <input type="text" id="firstname" class="form-control" placeholder="Max" formControlName="firstName"
+        [ngClass]="{'is-invalid': firstName.invalid && (firstName.dirty || firstName.touched), 'is-valid': firstName.valid}"
+        required />
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="invalid-feedback">
+        <div *ngIf="firstName.errors.required">
+          Your firstname is required.
+        </div>
+        <div *ngIf="firstName.errors.minlength">
+          Must be at least 2 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Last Name:</label>
+      <input type="text" id="lastname" class="form-control" placeholder="Müller" formControlName="lastName"
+        [ngClass]="{'is-invalid': lastName.invalid && (lastName.dirty || lastName.touched), 'is-valid': lastName.valid}"
+        required />
+      <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="invalid-feedback">
+        <div *ngIf="lastName.errors.required">
+          Your firstname is required.
+        </div>
+        <div *ngIf="lastName.errors.minlength">
+          Must be at least 2 characters long.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="control-label">Email:</label>
+      <input type="email" id="email" class="form-control" placeholder="max.mueller@web.de" formControlName="email"
+        [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched), 'is-valid': email.valid}" required />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors.email">
+          Please enter valid Email.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Password:</label>
+      <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password"
+        [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched), 'is-valid': password.valid}"
+        required />
+      <small *ngIf="password.dirty" id="passwordStrength" class="font-weight-bold form-text text-info">Password security level:
+        <b *ngIf="password.errors; else elseBlock"
+          [ngClass]="{'text-danger': password.errors.passwordSecurity === 'Low', 'text-warning': password.errors.passwordSecurity === 'Mid'}">
+          {{password.errors.passwordSecurity}}</b>
+        <ng-template #elseBlock><b class="text-success">High</b></ng-template>
+      </small>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
+        <div *ngIf="password.errors.required">
+          Password is required.
+        </div>
+        <div *ngIf="password.errors.passwordSecurity">
+          Password must be 6 characters long & should contain a Number and a Special character
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary btn-sm btn-block" [disabled]="!signupForm.valid">Submit</button>
+    </div>
+  </div>
+
+</form>
+
+<!-- {{signupForm.value | json}} -->
